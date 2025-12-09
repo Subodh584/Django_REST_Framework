@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Django REST API Client</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+            form {
+                background: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            input {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+            input[type="submit"]:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            #response {
+                margin-top: 20px;
+                padding: 20px;
+                border-radius: 8px;
+                display: none;
+            }
+            #response.success {
+                background-color: #d4edda;
+                border: 1px solid #c3e6cb;
+                color: #155724;
+            }
+            #response.error {
+                background-color: #f8d7da;
+                border: 1px solid #f5c6cb;
+                color: #721c24;
+            }
+            pre {
+                background: #f4f4f4;
+                padding: 10px;
+                border-radius: 4px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+            .loading {
+                text-align: center;
+                color: #666;
+            }
+        </style>
+    </head>
     <body>
+        <h1>🔐 Django REST API Login</h1>
         <form id="login-form" method="POST">
-            <input type="text" name="username" placeholder="Your Username" />
-            <input type="password" name="password", placeholder="Your Password">
-            <input type="submit" value="Login" />
+            <input type="text" name="username" placeholder="Your Username" required />
+            <input type="password" name="password" placeholder="Your Password" required>
+            <input type="submit" value="Login" id="login-btn" />
         </form>
 
-        <script src="./client.js"></script>
+        <div id="response"></div>
 
+        <script src="./client.js"></script>
     </body>
 </html>
